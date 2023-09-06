@@ -57,6 +57,7 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\BookType.cs" />
     <Compile Include="Model\Communication.cs" />
+    <Compile Include="Model\Context\LibraryContext.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Notice.cs" />
     <Compile Include="Model\RoleGuide.cs" />
@@ -66,9 +67,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Context\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
