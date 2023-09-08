@@ -10,7 +10,7 @@ namespace Entities.Model.Context
 {
     public class LibraryContext : DbContext
     {
-        public LibraryContext():base()
+        public LibraryContext():base("Library")
         {
             
         }
