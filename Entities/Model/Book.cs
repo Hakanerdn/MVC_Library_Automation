@@ -13,7 +13,7 @@ namespace Entities.Model
         public int BookTypeId { get; set; }
         public string BookName { get; set; }
         public string AuthorName { get; set; }
-        public string BroadcastHome { get; set; }
+        public string Publisher { get; set; }
         public int StockNumber { get; set; }
         public int PageNumber { get; set; }
         public string Description { get; set; }
