@@ -1,4 +1,5 @@
-﻿using Entities.Model;
+﻿using Entities.Mapping;
+using Entities.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,5 +28,23 @@ namespace Entities.Model.Context
         public DbSet<User> User { get; set; }
         public DbSet<UserMovement> UserMovement { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new NoticeMap());
+            modelBuilder.Configurations.Add(new SafetyBookMap());
+            modelBuilder.Configurations.Add(new AboutMap());
+            modelBuilder.Configurations.Add(new CommunicationMap());
+            modelBuilder.Configurations.Add(new BookMovementMap());
+            modelBuilder.Configurations.Add(new BookRecordMovementMap());
+            modelBuilder.Configurations.Add(new BookMap());
+            modelBuilder.Configurations.Add(new BookTypeMap());
+            modelBuilder.Configurations.Add(new UserMovementMap());
+            modelBuilder.Configurations.Add(new UserMap());
+            modelBuilder.Configurations.Add(new UserRoleMap());
+            modelBuilder.Configurations.Add(new RoleGuideMap());
+            modelBuilder.Configurations.Add(new MemberMap());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -51,6 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\AboutMap.cs" />
+    <Compile Include="Mapping\BookMap.cs" />
+    <Compile Include="Mapping\BookMovementMap.cs" />
+    <Compile Include="Mapping\BookRecordMovementMap.cs" />
+    <Compile Include="Mapping\BookTypeMap.cs" />
+    <Compile Include="Mapping\CommunicationMap.cs" />
+    <Compile Include="Mapping\MemberMap.cs" />
+    <Compile Include="Mapping\NoticeMap.cs" />
+    <Compile Include="Mapping\RoleGuideMap.cs" />
+    <Compile Include="Mapping\SafetyBookMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
+    <Compile Include="Mapping\UserMovementMap.cs" />
+    <Compile Include="Mapping\UserRoleMap.cs" />
     <Compile Include="Migrations\202309081615355_CreateDatabase.cs" />
     <Compile Include="Migrations\202309081615355_CreateDatabase.designer.cs">
       <DependentUpon>202309081615355_CreateDatabase.cs</DependentUpon>
