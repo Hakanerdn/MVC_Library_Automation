@@ -14,5 +14,6 @@ namespace Entities.Model
         public int BookNumber { get; set; }
         public DateTime BookReceivedDate { get; set; }
         public DateTime BookReturnDate { get; set; }
+        public Book Book { get; set; }
     }
 }

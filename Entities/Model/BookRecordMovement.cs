@@ -14,5 +14,6 @@ namespace Entities.Model
         public string ActionTaken { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
+        public Book Book { get; set; }
     }
 }

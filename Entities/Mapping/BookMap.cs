@@ -21,6 +21,8 @@ namespace Entities.Mapping
             this.Property(x => x.AuthorName).IsRequired().HasMaxLength(100);
             this.Property(x => x.Publisher).IsRequired().HasMaxLength(150);
             this.Property(x => x.Description).HasMaxLength(5000);
+
+            this.HasRequired(x=>x.BookType).WithMany(x=>x.Book).HasForeignKey(x=>x.BookTypeId);
         }
     }
 }

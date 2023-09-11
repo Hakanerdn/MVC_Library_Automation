@@ -20,6 +20,10 @@ namespace Entities.Model
         public DateTime AddDate { get; set; } = DateTime.Now;
         public DateTime UpdatedDate { get; set; } = DateTime.Now;
         public bool Deleted { get; set; }
+        public BookType BookType { get; set; }
+        public List<SafetyBook> SafetyBook { get; set; }
+        public List<BookMovement> BookMovement { get; set; }
+        public List<BookRecordMovement> BookRecordMovement { get; set; }
 
     }
 }
