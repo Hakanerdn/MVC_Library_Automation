@@ -16,5 +16,6 @@ namespace Entities.Model
         public string ImagePath { get; set; }
         public int ReadBookNumber { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public List<SafetyBook> SafetyBook { get; set; }
     }
 }

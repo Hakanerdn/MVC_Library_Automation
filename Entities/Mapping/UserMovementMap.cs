@@ -17,6 +17,8 @@ namespace Entities.Mapping
             this.HasKey(x => x.Id);
             this.Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(x => x.Description).IsRequired().HasMaxLength(5000);
+
+            this.HasRequired(x => x.User).WithMany(x => x.UserMovement).HasForeignKey(x => x.UserId);
         }
     }
 }

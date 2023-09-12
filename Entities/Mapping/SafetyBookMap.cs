@@ -18,6 +18,7 @@ namespace Entities.Mapping
             this.Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             this.HasRequired(x => x.Book).WithMany(x => x.SafetyBook).HasForeignKey(x => x.BookId);
+            this.HasRequired(x => x.Member).WithMany(x => x.SafetyBook).HasForeignKey(x => x.MemberId);
         }
     }
 }

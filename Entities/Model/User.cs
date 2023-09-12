@@ -16,5 +16,7 @@ namespace Entities.Model
         public string Address { get; set; }
         public string Email { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public List<UserMovement> UserMovement { get; set; }
+        public List<UserRole> UserRole { get; set; }
     }
 }
