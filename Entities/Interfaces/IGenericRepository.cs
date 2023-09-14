@@ -20,7 +20,7 @@ namespace Entities.Interfaces
 
         void InsertorUpdate(TContext context, TEntity entity);
 
-        void Delete(TContext context, TEntity entity);
+        void Delete(TContext context, Expression<Func<TEntity, bool>> filter);
 
         void Save(TContext context);
     }
