@@ -11,5 +11,6 @@ namespace Entities.DAL
 {
     public class SafetyBookDAL : GenericRepository<LibraryContext, SafetyBook>
     {
+
     }
 }
