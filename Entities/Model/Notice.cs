@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Validations;
+using FluentValidation.Attributes;
+using System;
 
 namespace Entities.Model
 {
+    [Validator(typeof(NoticeValidator))]
     public class Notice
     {
         public int Id { get; set; }

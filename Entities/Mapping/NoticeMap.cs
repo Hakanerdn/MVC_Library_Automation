@@ -21,7 +21,7 @@ namespace Entities.Mapping
             this.Property(x => x.Announcement).IsRequired().HasMaxLength(500);
             this.Property(x => x.Description).HasMaxLength(5000);
 
-            this.Property(x => x.Id).HasColumnName("id");
+            this.Property(x => x.Id).HasColumnName("Id");
             this.Property(x => x.Title).HasColumnName("Title");
             this.Property(x => x.Announcement).HasColumnName("Announcement");
             this.Property(x => x.Description).HasColumnName("Description");
