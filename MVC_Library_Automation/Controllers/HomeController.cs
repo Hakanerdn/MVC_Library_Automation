@@ -26,5 +26,10 @@ namespace MVC_Library_Automation.Controllers
 
             return View();
         }
+        public ActionResult AdminIndex()
+        {
+
+            return View();
+        }
     }
 }
