@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Model
 {
-    [Validator(typeof(BookTypeValidator))]
+   
     public class BookType
     {
         public int Id { get; set; }
