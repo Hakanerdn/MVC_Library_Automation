@@ -1,0 +1,48 @@
+﻿@model Entities.Model.BookType
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+
+            <div class="ibox-head">
+                Edit Book Type
+            </div>
+            <div class="ibox-body">
+                @using (Html.BeginForm("Update", "BookType", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(x => x.Id)
+                    <div class="form-group">
+                        <div>
+                            @Html.LabelFor(x => x.Type)
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(x => x.Type, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Type, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            @Html.LabelFor(x => x.Description)
+                        </div>
+                        <div>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-warning" />
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -13,6 +13,7 @@ namespace Entities.Validations
         public BookTypeValidator()
         {
             RuleFor(x => x.Type).NotEmpty().WithMessage("Book type can not be empty.");
+            RuleFor(x => x.Type).MinimumLength(5).WithMessage("The book type can have at least 5 characters.");
             RuleFor(x => x.Type).MaximumLength(150).WithMessage("Book type can have a maximum of 150 characters.");
         }
     }

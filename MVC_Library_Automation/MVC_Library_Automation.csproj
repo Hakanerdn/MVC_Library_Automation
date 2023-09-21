@@ -5231,6 +5231,8 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Home\AdminIndex.cshtml" />
     <Content Include="Views\BookType\Index.cshtml" />
+    <Content Include="Views\BookType\Add.cshtml" />
+    <Content Include="Views\BookType\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
