@@ -60,6 +60,12 @@ namespace MVC_Library_Automation.Controllers
             }
             return View(bookType);
         }
+        public ActionResult Delete(int? id)
+        {
+            bookTypeDAL.Delete(context,x=>x.Id == id);
+            bookTypeDAL.Save(context);
+            return RedirectToAction("Index");
+        }
 
     }
 }
