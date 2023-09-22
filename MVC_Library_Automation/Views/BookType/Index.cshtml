@@ -4,6 +4,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<form action="Index">
+    <label style="font-weight:bold">Search Book Type : </label>
+    @Html.TextBox("search")
+    <button type="submit" name="search">Search</button>
+</form>
+
 <div class="row">
     <div class="col-lg">
         <div class="ibox">

@@ -14,9 +14,13 @@ namespace MVC_Library_Automation.Controllers
         // GET: BookType
         LibraryContext context = new LibraryContext();
         BookTypeDAL bookTypeDAL = new BookTypeDAL();
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             var model = bookTypeDAL.GetAll(context);
+            if (search != null)
+            {
+                model = bookTypeDAL.GetAll(context, x => x.Type.Contains(search));
+            }
             return View(model);
         }
 
@@ -62,7 +66,7 @@ namespace MVC_Library_Automation.Controllers
         }
         public ActionResult Delete(int? id)
         {
-            bookTypeDAL.Delete(context,x=>x.Id == id);
+            bookTypeDAL.Delete(context, x => x.Id == id);
             bookTypeDAL.Save(context);
             return RedirectToAction("Index");
         }
