@@ -1,13 +1,16 @@
-﻿@model List<Entities.Model.BookType>
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Entities.Model.BookType>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<form action="Index">
+<form action="Index2">
     <label style="font-weight:bold">Search Book Type : </label>
     @Html.TextBox("search")
-    <button type="submit" name="search">Search</button>
+    <button type="submit">Search</button>
 </form>
 
 <div class="row">
@@ -42,6 +45,15 @@
                         }
                     </tbody>
                 </table>
+                @Html.PagedListPager(Model, page => Url.Action("Index", "BookTyoe", new { page, search = Request.QueryString["search"] }),new PagedListRenderOptions
+           {
+                FunctionToTransformEachPageLink = (li,a) =>
+                {
+                    a.AddCssClass("page-link");
+                    li.InnerHtml = a.ToString();
+                    return li;
+                }
+           })
                 <a href="/BookType/Add" class="btn btn-success">New</a>
 
             </div>

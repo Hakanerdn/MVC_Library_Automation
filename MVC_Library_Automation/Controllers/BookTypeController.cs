@@ -1,6 +1,7 @@
 ﻿using Entities.DAL;
 using Entities.Model;
 using Entities.Model.Context;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,14 @@ namespace MVC_Library_Automation.Controllers
         // GET: BookType
         LibraryContext context = new LibraryContext();
         BookTypeDAL bookTypeDAL = new BookTypeDAL();
-        public ActionResult Index(string search)
+        public ActionResult Index2(string search, int? page)
         {
-            var model = bookTypeDAL.GetAll(context);
+            var model = bookTypeDAL.GetAll(context).ToPagedList(page ?? 1, 3);
             if (search != null)
             {
-                model = bookTypeDAL.GetAll(context, x => x.Type.Contains(search));
+                model = bookTypeDAL.GetAll(context, x => x.Type.Contains(search)).ToPagedList(page ?? 1, 3);
             }
-            return View(model);
+            return View("Index", model);
         }
 
         public ActionResult Add()
