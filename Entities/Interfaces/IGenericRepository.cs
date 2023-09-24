@@ -12,7 +12,7 @@ namespace Entities.Interfaces
         where TContext : DbContext, new()
         where TEntity : class, new()
     {
-        List<TEntity> GetAll(TContext context, Expression<Func<TEntity, bool>> filter = null);
+        List<TEntity> GetAll(TContext context, Expression<Func<TEntity, bool>> filter = null, string tbl = null);
 
         TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter);
 
