@@ -27,9 +27,9 @@ namespace Entities.Repository
                : tbl == null ? context.Set<TEntity>().Where(filter).ToList() : context.Set<TEntity>().Include(tbl).Where(filter).ToList();
         }
 
-        public TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter)
+        public TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter, string tbl = null)
         {
-            return context.Set<TEntity>().FirstOrDefault(filter);
+            return tbl == null ? context.Set<TEntity>().FirstOrDefault(filter) : context.Set<TEntity>().Include(tbl).FirstOrDefault(filter);
         }
 
         public TEntity GetById(TContext context, int? id)

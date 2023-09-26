@@ -14,7 +14,7 @@ namespace Entities.Interfaces
     {
         List<TEntity> GetAll(TContext context, Expression<Func<TEntity, bool>> filter = null, string tbl = null);
 
-        TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter);
+        TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter,string tbl = null);
 
         TEntity GetById(TContext context, int? id);
 

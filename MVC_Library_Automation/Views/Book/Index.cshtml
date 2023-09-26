@@ -21,6 +21,7 @@
                             <td>Book Name</td>
                             <td>Author</td>
                             <td>Addition date</td>
+                            <td>Deleted ?</td>
                             <td>Operation</td>
                         </tr>
                     </thead>
@@ -34,10 +35,11 @@
                                 <td>@Html.DisplayFor(x => item.BookName)</td>
                                 <td>@Html.DisplayFor(x => item.AuthorName)</td>
                                 <td>@Html.DisplayFor(x => item.AddDate)</td>
+                                <td>@Html.CheckBoxFor(x => item.Deleted)</td>
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
-                                    @Html.ActionLink("Detail", "Detail", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                                    @Html.ActionLink("Detail", "Detail", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
                                 </td>
                             </tr>
                         }

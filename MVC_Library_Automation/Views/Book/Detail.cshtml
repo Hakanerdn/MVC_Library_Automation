@@ -1,0 +1,66 @@
+﻿@model Entities.Model.Book
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+            <div class="ibox-head">
+                <b>@Html.DisplayFor(x => x.Id) numbered book information</b>
+            </div>
+            <div class="ibox-body">
+                <div class="form-group">
+                    <b>Book Type : </b>
+                    @Html.DisplayFor(x => x.BookType.Type)
+                </div>
+                <div class="form-group">
+                    <b>Barcode No : </b>
+                    @Html.DisplayFor(x => x.Barcodeno)
+                </div>
+                <div class="form-group">
+                    <b>Book Name : </b>
+                    @Html.DisplayFor(x => x.BookName)
+                </div>
+                <div class="form-group">
+                    <b>Author : </b>
+                    @Html.DisplayFor(x => x.AuthorName)
+                </div>
+                <div class="form-group">
+                    <b>BPublisher : </b>
+                    @Html.DisplayFor(x => x.Publisher)
+                </div>
+                <div class="form-group">
+                    <b>Stock: </b>
+                    @Html.DisplayFor(x => x.StockNumber)
+                </div>
+                <div class="form-group">
+                    <b>Page : </b>
+                    @Html.DisplayFor(x => x.PageNumber)
+                </div>
+                <div class="form-group">
+                    <b>Description : </b>
+                    @Html.DisplayFor(x => x.Description)
+                </div>
+                <div class="form-group">
+                    <b>Added Time: </b>
+                    @Html.DisplayFor(x => x.AddDate)
+                </div>
+                <div class="form-group">
+                    <b>Updated Time: </b>
+                    @Html.DisplayFor(x => x.UpdatedDate)
+                </div>
+                <div class="form-group">
+                    <b>Deleted : </b>
+                    @Html.CheckBoxFor(x => x.Deleted)
+                </div>
+                <div class="form-group">
+                    @Html.ActionLink("Book List", "Index", null, new { @class = "btn btn-info" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
