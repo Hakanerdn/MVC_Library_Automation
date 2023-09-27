@@ -22,7 +22,7 @@ namespace Entities.Model
         public string Description { get; set; }
         public DateTime AddDate { get; set; } = DateTime.Now;
         public DateTime UpdatedDate { get; set; } = DateTime.Now;
-        public bool Deleted { get; set; }
+        public bool Deleted { get; set; } = false;
         public BookType BookType { get; set; }
         public List<SafetyBook> SafetyBook { get; set; }
         public List<BookMovement> BookMovement { get; set; }

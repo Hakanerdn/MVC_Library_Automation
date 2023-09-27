@@ -18,6 +18,10 @@ namespace MVC_Library_Automation.Controllers
             var model = bookDAL.GetAll(context, null, "BookType");
             return View(model);
         }
+        public ActionResult Add()
+        {
+            return View();
+        }
         public ActionResult Detail(int? id)
         {
             var model = bookDAL.GetByFilter(context, x => x.Id == id, "BookType");

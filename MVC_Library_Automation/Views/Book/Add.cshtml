@@ -1,0 +1,66 @@
+﻿@model Entities.Model.Book
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+
+            <div class="ibox-head">
+                Add Book Type
+            </div>
+            <div class="ibox-body">
+                @using (Html.BeginForm("Add", "Book", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.BookType.Type)
+                        @Html.DropDownListFor(x => x.BookTypeId, (SelectList)ViewBag.Liste)
+                        @Html.ValidationMessageFor(x => x.BookTypeId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.Barcodeno)
+                        @Html.TextBoxFor(x => x.Barcodeno, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.BookTypeId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.BookName)
+                        @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.BookName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.AuthorName)
+                        @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.AuthorName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.Publisher)
+                        @Html.TextBoxFor(x => x.Publisher, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Publisher, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.StockNumber)
+                        @Html.TextBoxFor(x => x.StockNumber, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.StockNumber, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.PageNumber)
+                        @Html.TextBoxFor(x => x.PageNumber, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PageNumber, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.Description)
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                        @*@Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })*@
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
