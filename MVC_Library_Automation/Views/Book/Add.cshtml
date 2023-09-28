@@ -19,7 +19,7 @@
                     @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.DisplayNameFor(x => x.BookType.Type)
-                        @Html.DropDownListFor(x => x.BookTypeId, (SelectList)ViewBag.Liste)
+                        @Html.DropDownListFor(x => x.BookTypeId, (SelectList)ViewBag.Liste, "-Make your choice-", new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.BookTypeId, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">

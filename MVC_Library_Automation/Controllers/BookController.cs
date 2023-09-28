@@ -20,6 +20,7 @@ namespace MVC_Library_Automation.Controllers
         }
         public ActionResult Add()
         {
+            ViewBag.liste = new SelectList(context.BookType, "Id", "Type");
             return View();
         }
         public ActionResult Detail(int? id)
