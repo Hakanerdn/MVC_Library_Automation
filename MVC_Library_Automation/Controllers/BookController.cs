@@ -1,4 +1,5 @@
 ﻿using Entities.DAL;
+using Entities.Model;
 using Entities.Model.Context;
 using System;
 using System.Collections.Generic;
@@ -12,17 +13,33 @@ namespace MVC_Library_Automation.Controllers
     {
         LibraryContext context = new LibraryContext();
         BookDAL bookDAL = new BookDAL();
-        // GET: Book
+
         public ActionResult Index()
         {
             var model = bookDAL.GetAll(context, null, "BookType");
             return View(model);
         }
+
         public ActionResult Add()
         {
             ViewBag.liste = new SelectList(context.BookType, "Id", "Type");
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Book entity)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.liste = new SelectList(context.BookType, "Id", "Type");
+                return View();
+            }
+            bookDAL.InsertorUpdate(context, entity);
+            bookDAL.Save(context);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Detail(int? id)
         {
             var model = bookDAL.GetByFilter(context, x => x.Id == id, "BookType");

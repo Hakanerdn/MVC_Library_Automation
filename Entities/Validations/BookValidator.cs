@@ -20,6 +20,8 @@ namespace Entities.Validations
             RuleFor(x => x.AuthorName).MaximumLength(100).WithMessage("Author name can have a maximum of 100 characters.");
             RuleFor(x => x.Publisher).NotEmpty().WithMessage("Publisher name can not be empty.");
             RuleFor(x => x.Publisher).MaximumLength(150).WithMessage("Publisher name can have a maximum of 150 characters.");
+            RuleFor(x => x.BookTypeId).NotEmpty().WithMessage("Book type can not be empty.");
+
         }
     }
 }
