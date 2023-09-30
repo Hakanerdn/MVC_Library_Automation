@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace MVC_Library_Automation.Controllers
 {
-
     public class BookController : Controller
     {
         LibraryContext context = new LibraryContext();
