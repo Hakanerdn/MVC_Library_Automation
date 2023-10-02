@@ -4,15 +4,20 @@ Objective : To keep a record of book-related transactions in the database of an 
 
 Topics and chapters:
 
-1 - Member Registration, Listing, Searching, Deleting, Editing
-2 - Book Registration, Listing, Search, Deletion, Editing operations
-3 - User Login, User Registration, Forgot Password.
-4 - View user actions
-5 - Granting and managing multiple authorizations to users.
-6 - Escrow book issuance and return operations
-7 - Create and use Contact, About Us, Announcements sections
+- Member Registration, Listing, Searching, Deleting, Editing
+- Book Registration, Listing, Search, Deletion, Editing operations
+- User Login, User Registration, Forgot Password.
+- View user actions,
+- Granting and managing multiple authorizations to users.
+- Escrow book issuance and return operations
+- Create and use Contact, About Us, Announcements sections
 
 Languages:
 - HTML CSS
 - ASP.NET 
 - Bootstrap
+
+Packages:
+- FluentValidation
+- FluentValidation.MVC
+- Entity Framework
