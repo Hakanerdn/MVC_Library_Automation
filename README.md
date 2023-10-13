@@ -54,5 +54,3 @@ To get started with the Library Automation System, follow these steps:
 We welcome contributions to this project! Feel free to fork the repository, make your changes, and submit a pull request.
 
 ---
-
-Feel free to customize this README according to your project's specific requirements and details.
