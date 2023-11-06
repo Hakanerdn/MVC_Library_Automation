@@ -1,0 +1,57 @@
+﻿
+@model List<Entities.Model.Notice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg">
+        <div class="ibox">
+            <div class="ibox-head">
+                Book List
+            </div>
+            <div class="ibox-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <td>Type</td>
+                            <td>Borcode No</td>
+                            <td>Book Name</td>
+                            <td>Author</td>
+                            <td>Addition date</td>
+                            <td>Deleted ?</td>
+                            <td>Operation</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@Html.DisplayFor(x => item.Id)</th>
+                                <td>@Html.DisplayFor(x => item.BookType.Type)</td>
+                                <td>@Html.DisplayFor(x => item.Barcodeno)</td>
+                                <td>@Html.DisplayFor(x => item.BookName)</td>
+                                <td>@Html.DisplayFor(x => item.AuthorName)</td>
+                                <td>@Html.DisplayFor(x => item.AddDate)</td>
+                                <td>@Html.CheckBoxFor(x => item.Deleted)</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                                    @Html.ActionLink("Detail", "Detail", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm delete", onclick = "return confirm('Is deleted?')" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    @Html.ActionLink("New", "Add", null, new { @class = "btn btn-success" })
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

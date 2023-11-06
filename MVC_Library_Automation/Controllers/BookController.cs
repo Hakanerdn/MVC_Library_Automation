@@ -40,6 +40,17 @@ namespace MVC_Library_Automation.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.liste = new SelectList(context.BookType, "Id", "Type");
+            var model = bookDAL.GetByFilter(context,x=>x.Id == id,"BookType");
+            return View(model);
+        }
+
         public ActionResult Detail(int? id)
         {
             var model = bookDAL.GetByFilter(context, x => x.Id == id, "BookType");

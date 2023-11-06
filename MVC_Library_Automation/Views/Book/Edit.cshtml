@@ -10,7 +10,7 @@
         <div class="ibox">
 
             <div class="ibox-head">
-                Add Book Type
+                <b>Edit Book Page</b>
             </div>
             <div class="ibox-body">
                 @using (Html.BeginForm("Add", "Book", FormMethod.Post))
@@ -47,15 +47,23 @@
                         @Html.TextBoxFor(x => x.StockNumber, new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.StockNumber, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group"> 
+                    <div class="form-group">
                         @Html.DisplayNameFor(x => x.PageNumber)
                         @Html.TextBoxFor(x => x.PageNumber, new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.PageNumber, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
+                        @Html.DisplayNameFor(x => x.AddDate)
+                        @Html.TextBoxFor(x => x.AddDate, new { @class = "form-control", type = "datetime-local", Value = Model.AddDate.ToString("yyyy-MM-dd HH:mm") })
+                        @Html.ValidationMessageFor(x => x.AddDate, "", new { @class = "text-danger"})
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(x => x.Deleted)
+                        @Html.CheckBoxFor(x => x.Deleted)
+                    </div>
+                    <div class="form-group">
                         @Html.DisplayNameFor(x => x.Description)
                         @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
-                        @*@Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })*@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Add</button>
