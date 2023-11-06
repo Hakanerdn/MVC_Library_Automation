@@ -45,5 +45,17 @@ namespace MVC_Library_Automation.Controllers
             var model = bookDAL.GetByFilter(context, x => x.Id == id, "BookType");
             return View(model);
         }
+
+        public ActionResult Delete(int id) {
+            if(id == null)
+            {
+                return HttpNotFound();
+            }
+            bookDAL.Delete(context, x => x.Id == id);
+            bookDAL.Save(context);
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

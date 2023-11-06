@@ -5231,11 +5231,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Notice\Create.cshtml" />
-    <Content Include="Views\Notice\Delete.cshtml" />
-    <Content Include="Views\Notice\Details.cshtml" />
-    <Content Include="Views\Notice\Edit.cshtml" />
-    <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Home\AdminIndex.cshtml" />
     <Content Include="Views\BookType\Index.cshtml" />
@@ -5248,6 +5243,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Notice\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
